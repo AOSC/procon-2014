@@ -19,6 +19,10 @@ p {
   @extend %p;
 }
 
+aside {
+  @extend %aside;
+}
+
 .header {
   @include span(12);
   @include breakpoint($screen-small) {
@@ -164,15 +168,6 @@ main {
   }
 }
 
-.label-red {
-  background-color: $red;
-  color: white;
-  border-radius: 2px;
-  padding: 2px 6px;
-  position: relative;
-  top: -4px;
-}
-
 .lecture {
   @include span(12);
   @include breakpoint($screen-small) {
@@ -185,21 +180,20 @@ main {
   @extend %section;
   background-color: $skin-dark;
   > h1 {
-    span, div {
-      padding: 10px;
-    }
-    span {
-      @extend %h1;
-      color: $white;
-    }
-    div {
-      @extend %h1;
-      color: #3C3638;
-    }
-    .label-red {
-      font-size: 80%;
-    }
-    border-bottom: 4px dashed $gray;
+    @extend %h1;
+    color: $white;
+    // @extend %h1;
+    // span, div {
+    //   padding: 10px;
+    // }
+    // span {
+    //   @extend %h1;
+    //   color: $white;
+    // }
+    // div {
+    //   @extend %h1;
+    //   color: #3C3638;
+    // }
     margin-bottom: 30px;
     padding: 10px;
   }
@@ -215,25 +209,20 @@ main {
     header h1 {
       display: inline-block;
       vertical-align: middle;
-      @include adjust-font-size-to(30px, 1);
+      @include adjust-font-size-to(30px, 1.6);
       @include breakpoint($screen-small) {
-        @include adjust-font-size-to(40px, 1);
+        @include adjust-font-size-to(34px, 1.6);
       }
     }
 
-    span {
-      padding: 2px 6px;
-      margin-left: 10px;
-      color: white;
-      font-weight: bold;
-      border-radius: 8px;
-      @include adjust-font-size-to(15px);
-      vertical-align: middle;
-    }
     .label-sat {
+      @extend %label;
+      margin-left: 10px;
       background-color: $green;
     }
     .label-sun {
+      @extend %label;
+      margin-left: 10px;
       background-color: $blue-dark;
     }
     &:first-child {
@@ -246,6 +235,14 @@ main {
   }
 }
 
+.lecture-time {
+  @extend %label;
+}
+
+.label-free {
+  @extend %gothic;
+  color: $blue-dark;
+}
 
 %small-section {
   @extend %section;
@@ -278,9 +275,11 @@ main {
     margin-left: 30px;
     margin-bottom: rhythm();
   }
+  p {
+    @extend %aside;
+  }
   aside {
     color: $gray;
-    @extend %aside;
   }
 }
 
@@ -299,8 +298,14 @@ main {
     @extend %h2;
     color: $yellow-dark;
   }
+  p {
+    @extend %aside;
+  }
   aside {
     float: right;
     margin: 10px;
+  }
+  a {
+    color: $blue-dark;
   }
 }

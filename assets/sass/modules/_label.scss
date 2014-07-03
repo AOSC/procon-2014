@@ -1,0 +1,9 @@
+%label {
+  @include adjust-font-size-to(15px);
+  padding: 2px 6px;
+  color: $white;
+  font-weight: bold;
+  border-radius: 8px;
+  vertical-align: middle;
+  display: inline-block;
+}
