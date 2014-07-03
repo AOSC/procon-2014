@@ -1,0 +1,15 @@
+%h1 {
+  @include adjust-font-size-to(22px, 1.2);
+}
+
+%h2 {
+  @include adjust-font-size-to(14px);
+}
+
+%p {
+  @include adjust-font-size-to(12px);
+}
+
+%aside {
+  @include adjust-font-size-to(10px);
+}
