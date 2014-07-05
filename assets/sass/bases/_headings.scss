@@ -1,3 +1,4 @@
+
 %h1 {
   @include adjust-font-size-to(22px, 1.4);
 }
@@ -16,4 +17,5 @@
 
 %small {
   @include adjust-font-size-to(9px);
+  @include adjust-leading-to(1);
 }

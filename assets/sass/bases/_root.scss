@@ -61,7 +61,7 @@ aside {
   }
 
   ul a {
-    @include adjust-font-size-to(10px, 2.2);
+    @include adjust-font-size-to(9px, 2);
     color: $black;
     @include breakpoint($screen-medium) {
       @include adjust-font-size-to(12px, 2.6);
@@ -122,13 +122,21 @@ main {
 
 %section {
   margin: 0;
-  //min-height: $height;
   > * {
     margin: 10px;
   }
 
   @include breakpoint($screen-small) {
     margin-bottom: gutter();
+  }
+}
+
+%section-wide {
+  @extend %section;
+  @include breakpoint($screen-small) {
+    > * {
+      margin: 20px;
+    }
   }
 }
 
@@ -141,7 +149,7 @@ main {
     @include adjust-font-size-to(30px);
     color: $white;
     @include breakpoint($screen-small) {
-      @include adjust-font-size-to(50px);
+      @include adjust-font-size-to(40px);
     }
   }
   p {
@@ -150,11 +158,8 @@ main {
 
   li {
     @extend %h2;
-    @extend %gothic;
-    @include breakpoint($screen-small) {
-      @include adjust-font-size-to(16px, 1.3);
-    }
-    color: $yellow;
+    @include adjust-leading-to(1.2);
+    color: $white;
   }
 
   aside {
@@ -170,6 +175,7 @@ main {
 
 .lecture {
   @include span(12);
+  @extend %section-wide;
   @include breakpoint($screen-small) {
     @include span(12 last);
   }
@@ -177,34 +183,26 @@ main {
     @include span(8);
   }
 
-  @extend %section;
   background-color: $skin-dark;
-  > h1 {
-    @extend %h1;
-    color: $white;
-    // @extend %h1;
-    // span, div {
-    //   padding: 10px;
-    // }
-    // span {
-    //   @extend %h1;
-    //   color: $white;
-    // }
-    // div {
-    //   @extend %h1;
-    //   color: #3C3638;
-    // }
+  > header {
+    span {
+      @extend %gothic;
+      @extend %label;
+      color: $skin-dark;
+      background-color: $white;
+    }
+    h1 {
+      @include adjust-font-size-to(36px, 3);
+      color: $black;
+    }
     margin-bottom: 30px;
-    padding: 10px;
   }
 
   p {
-    margin-top: rhythm();
     color: $gray-darkest;
   }
 
   article {
-    padding: 10px;
     margin-top: 20px;
     header h1 {
       display: inline-block;
@@ -215,13 +213,17 @@ main {
       }
     }
 
+    a {
+      color: $black;
+    }
+
     .label-sat {
-      @extend %label;
+      @extend %label-round;
       margin-left: 10px;
       background-color: $green;
     }
     .label-sun {
-      @extend %label;
+      @extend %label-round;
       margin-left: 10px;
       background-color: $blue-dark;
     }
@@ -233,15 +235,6 @@ main {
   article + article {
     margin-top: 20px;
   }
-}
-
-.lecture-time {
-  @extend %label;
-}
-
-.label-free {
-  @extend %gothic;
-  color: $blue-dark;
 }
 
 %small-section {
@@ -270,15 +263,18 @@ main {
     }
   }
   ul {
-    font-weight: bold;
     list-style: square;
     margin-left: 30px;
     margin-bottom: rhythm();
+  }
+  li {
+    @extend %aside;
   }
   p {
     @extend %aside;
   }
   aside {
+    @extend %small;
     color: $gray;
   }
 }
