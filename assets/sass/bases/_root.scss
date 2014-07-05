@@ -67,6 +67,13 @@ aside {
       @include adjust-font-size-to(12px, 2.6);
     }
   }
+
+  > p {
+    color: $white;
+    @include breakpoint($screen-small) {
+      text-align: center;
+    }
+  }
 }
 
 nav {
