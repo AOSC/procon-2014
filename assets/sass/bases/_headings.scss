@@ -4,15 +4,15 @@
 }
 
 %h2 {
-  @include adjust-font-size-to(14px);
+  @include adjust-font-size-to(15px);
 }
 
 %p {
-  @include adjust-font-size-to(12px);
+  @include adjust-font-size-to(13px);
 }
 
 %aside {
-  @include adjust-font-size-to(10px);
+  @include adjust-font-size-to(11px);
 }
 
 %small {
