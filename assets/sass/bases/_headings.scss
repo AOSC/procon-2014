@@ -21,6 +21,7 @@
 
 %p {
   @include adjust-font-size-to(13px);
+  @include adjust-leading-to(1.3);
 }
 
 %aside {

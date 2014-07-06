@@ -24,6 +24,10 @@ aside {
   @extend %aside;
 }
 
+small {
+  @extend %aside;
+}
+
 .header {
   @include span(12);
   @include breakpoint($screen-small) {
@@ -123,6 +127,7 @@ main {
     @include span(9 last);
   }
   @include container;
+  @extend %clearfix;
 }
 
 %clearfix {
@@ -304,13 +309,12 @@ main {
 
 .about-us {
   @extend %small-section;
+  @include span(12);
   @include breakpoint($screen-small) {
-    @include span(6 last);
+    @include span(3);
+    margin-top: rhythm();
   }
-  @include breakpoint($screen-medium) {
-    @include pre(8);
-    @include span(4 last);
-  }
+
   background-color: $gray-lighter;
   h1 {
     @extend %gothic;
@@ -323,5 +327,62 @@ main {
   aside {
     float: right;
     margin: 10px;
+  }
+}
+
+.demae {
+  @extend %small-section;
+  background-color: $green;
+
+  @include breakpoint($screen-small) {
+    @include span(6 last);
+  }
+  @include breakpoint($screen-medium) {
+    @include span(4 last);
+    float: right;
+  }
+
+  h1 {
+    @extend %h1;
+    @extend %serif;
+  }
+
+  p {
+    @extend %aside;
+  }
+}
+
+.contest-details {
+  @include span(12);
+  @include container;
+  background-color: darken($background, 5%);
+  > h1 {
+    @extend %h0;
+    @extend %gothic;
+    text-align: center;
+    background-color: $gray-darkest;
+    color: $white;
+  }
+}
+
+.contest-details-kyogi {
+  @include span(12);
+  @extend %section-wide;
+  @include breakpoint($screen-small) {
+    @include span(6);
+  }
+  h1 {
+    @extend %h1;
+  }
+}
+
+.contest-details-sakuhin {
+  @include span(12);
+  @extend %section-wide;
+  @include breakpoint($screen-small) {
+    @include span(6 last);
+  }
+  h1 {
+    @extend %h1;
   }
 }
