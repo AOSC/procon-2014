@@ -1,5 +1,4 @@
 %label {
-  @include adjust-font-size-to(15px);
   padding: 2px 6px;
   color: $white;
   font-weight: bold;
@@ -9,10 +8,17 @@
 
 %label-round {
   @extend %label;
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .label {
   @extend %label;
   @extend %gothic;
+}
+
+.label-skin {
+  @extend %gothic;
+  @extend %label;
+  color: $skin-dark;
+  background-color: $white;
 }

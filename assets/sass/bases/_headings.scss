@@ -1,10 +1,22 @@
 
+%h0 {
+  @include adjust-font-size-to(30px);
+  @include breakpoint($screen-small) {
+    @include adjust-font-size-to(40px);
+  }
+}
 %h1 {
-  @include adjust-font-size-to(22px, 1.4);
+  @include adjust-font-size-to(22px);
+  @include adjust-leading-to(1);
 }
 
 %h2 {
   @include adjust-font-size-to(15px);
+  @include adjust-leading-to(1);
+}
+
+%h3 {
+  @include adjust-font-size-to(14px);
 }
 
 %p {

@@ -3,16 +3,17 @@ body {
   @extend %sans;
   max-width: $screen-max;
   background-color: $background;
+  transition: all 1s;
 
   @include breakpoint($screen-small) {
     padding-left: 20px;
     padding-right: 20px;
     @include adjust-font-size-to($base-font-size-medium);
   }
+
   @include breakpoint($screen-max) {
     @include adjust-font-size-to($base-font-size-large);
   }
-  transition: all 1s;
 }
 
 p {
@@ -70,6 +71,7 @@ aside {
 
   > p {
     color: $white;
+    @extend %gothic;
     @include breakpoint($screen-small) {
       text-align: center;
     }
@@ -94,7 +96,7 @@ nav {
   }
 
   ul {
-    border-left: 10px solid darken($yellow, 20%);
+    border-left: 8px solid $yellow-dark;
   }
 
   li {
@@ -128,7 +130,6 @@ main {
 }
 
 %section {
-  margin: 0;
   > * {
     margin: 10px;
   }
@@ -149,15 +150,12 @@ main {
 
 .slug {
   @include span(12);
-  @extend %section;
+  @extend %section-wide;
   background-color: $gray-darkest;
 
   h1 {
-    @include adjust-font-size-to(30px);
+    @extend %h0;
     color: $white;
-    @include breakpoint($screen-small) {
-      @include adjust-font-size-to(40px);
-    }
   }
   p {
     color: #DBD3D3;
@@ -191,18 +189,20 @@ main {
   }
 
   background-color: $skin-dark;
+
   > header {
-    span {
-      @extend %gothic;
-      @extend %label;
-      color: $skin-dark;
-      background-color: $white;
-    }
     h1 {
-      @include adjust-font-size-to(36px, 3);
+      @extend %h0;
+      vertical-align: middle;
       color: $black;
     }
-    margin-bottom: 30px;
+    h2 {
+      @extend %h1;
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
   }
 
   p {
@@ -211,29 +211,23 @@ main {
 
   article {
     margin-top: 20px;
+    header {
+      margin-bottom: rhythm() * 0.5;
+    }
+
     header h1 {
-      display: inline-block;
-      vertical-align: middle;
-      @include adjust-font-size-to(30px, 1.6);
-      @include breakpoint($screen-small) {
-        @include adjust-font-size-to(34px, 1.6);
-      }
+      @extend %h1;
+    }
+
+    small {
+      color: $gray;
+      @extend %gothic;
     }
 
     a {
       color: $black;
     }
 
-    .label-sat {
-      @extend %label-round;
-      margin-left: 10px;
-      background-color: $green;
-    }
-    .label-sun {
-      @extend %label-round;
-      margin-left: 10px;
-      background-color: $blue-dark;
-    }
     &:first-child {
       border-bottom: 1px solid $gray-darker;
     }
@@ -241,6 +235,21 @@ main {
 
   article + article {
     margin-top: 20px;
+  }
+
+
+  .label-sat {
+    @extend %label-round;
+    @extend %small;
+    @include adjust-leading-to(1);
+
+    background-color: $green;
+  }
+
+  .label-sun {
+    @extend %label-round;
+    @extend %small;
+    background-color: $blue-dark;
   }
 }
 
@@ -307,8 +316,5 @@ main {
   aside {
     float: right;
     margin: 10px;
-  }
-  a {
-    color: $blue-dark;
   }
 }

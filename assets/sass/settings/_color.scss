@@ -2,7 +2,7 @@ $white: #ffffff;
 $black: #010101;
 $green: #2AC879;
 $yellow: #f7c974;
-$yellow-dark: #D9920F;
+$yellow-dark: darken($yellow, 20%);
 $skin: #f2dba5;
 $skin-dark: #ccb1b4;
 $pink: #f0c2b4;
