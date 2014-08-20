@@ -6,6 +6,8 @@
 @import "breakpoint";
 @import "susy";
 
+@import "fontcustom";
+
 @include establish-baseline();
 
 // Partials

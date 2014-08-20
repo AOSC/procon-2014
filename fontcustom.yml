@@ -1,0 +1,8 @@
+font_name: fontcustom
+input:
+  vectors: public/svg
+output:
+  fonts: public/fonts
+  css: public/sass
+  preview: public/html
+templates: [ css, preview ]
