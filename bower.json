@@ -1,0 +1,7 @@
+{
+  "name": "procon-2014",
+  "dependencies": {
+    "jquery": "^1.11",
+    "jQuery.mmenu": "^4"
+  }
+}

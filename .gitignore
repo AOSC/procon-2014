@@ -1,4 +1,6 @@
 /node_modules
 /public/css
 /public/.sass-cache
+/bower_components
+/public/js-vendor
 .DS_Store
