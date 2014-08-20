@@ -1,6 +1,10 @@
 /node_modules
 /public/css
-/public/.sass-cache
 /bower_components
 /public/js-vendor
+/public/fonts/
+/public/sass/_fontcustom.scss
+/public/html/
+.sass-cache
+.fontcustom-manifest.json
 .DS_Store

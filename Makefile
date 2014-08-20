@@ -1,5 +1,5 @@
 
-.PHONY: css clean js
+.PHONY: css clean js fontcustom
 
 js:
 	@cp \
@@ -7,8 +7,17 @@ js:
 		bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.js \
 		public/js-vendor/
 
-css:
+css: fontcustom
 	@bundle exec compass compile public
 
+fontcustom: public/sass/_fontcustom.scss
+
+public/sass/_fontcustom.scss: fontcustom.yml
+	@bundle exec fontcustom compile -c $<
+	@mv public/sass/fontcustom.css $@
+	@echo 'build fontcustom done'
+
 clean:
-	@rm -rf public/.sass-cache
+	@rm -rf \
+		public/.sass-cache \
+		.fontcustom-manifest.json
