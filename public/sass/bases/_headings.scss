@@ -1,4 +1,11 @@
 
+%big {
+  @include adjust-font-size-to(50px);
+  @include breakpoint($screen-small) {
+    @include adjust-font-size-to(60px);
+  }
+}
+
 %h0 {
   @include adjust-font-size-to(30px);
   @include breakpoint($screen-small) {

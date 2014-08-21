@@ -167,12 +167,28 @@ main {
   background-color: $gray-darkest;
 
   h2 {
-    @extend %h1;
+    @extend %h0;
+    background-color: $blue;
+    color: $gray-darkest;
+    display: inline;
+    border-radius: 4px;
+    padding: 4px 10px;
   }
 
   h1 {
-    @extend %h0;
     color: $white;
+  }
+
+  .slug-date {
+    @extend %big;
+  }
+
+  .slug-date-year {
+    @extend %h0;
+  }
+
+  .slug-date-dow {
+    @extend %h1;
   }
 
   ul {
@@ -201,41 +217,46 @@ main {
   }
 }
 
+
+
 .label-blue {
   padding: 4px 10px;
   color: $white;
   background-color: $blue-dark;
 }
 
-.rss {
+.simple {
   @include span(12);
   @extend %section-wide;
   color: $gray-darkest;
+  box-sizing: border-box;
 
   @include breakpoint($screen-small) {
     border: 6px solid $gray-darkest;
   }
 
-  box-sizing: border-box;
-
-  h1 {
+  > h1 {
     @extend %h0;
     color: $gray-darkest;
+    margin-bottom: 30px;
   }
 
-  aside {
-    @extend %p;
-    float: right;
-    margin-right: 20px;
+  section {
+    margin-top: 30px;
+    h1 {
+      @extend %h1;
+      margin-bottom: 20px;
+    }
   }
 }
 
-.rss-list {
+.simple-list {
   time {
     @extend %gothic;
     color: white;
     background: $gray-darkest;
     padding: 4px 8px;
+    margin-right: 20px;
   }
 
   > li {
@@ -244,14 +265,27 @@ main {
     @include adjust-leading-to(1.2);
   }
 
-  .list-small {
-    list-style: {
-      type: circle;
-      position: inside;
-    }
-    a {
-      @extend %aside;
-    }
+  p {
+    @extend %p;
+  }
+}
+
+.list-circle {
+  list-style: {
+    type: circle;
+    position: inside;
+  }
+  a, p {
+    @extend %aside;
+  }
+  p {
+    margin-left: 20px;
+  }
+  time {
+    margin-right: 10px;
+  }
+  li {
+    margin-bottom: 20px;
   }
 }
 
@@ -335,40 +369,5 @@ main {
 
   p {
     @extend %aside;
-  }
-}
-
-.contest-details {
-  @include span(12);
-  @include container;
-  background-color: darken($background, 5%);
-  > h1 {
-    @extend %h0;
-    @extend %gothic;
-    text-align: center;
-    background-color: $gray-darkest;
-    color: $white;
-  }
-}
-
-.contest-details-kyogi {
-  @include span(12);
-  @extend %section-wide;
-  @include breakpoint($screen-small) {
-    @include span(6);
-  }
-  h1 {
-    @extend %h1;
-  }
-}
-
-.contest-details-sakuhin {
-  @include span(12);
-  @extend %section-wide;
-  @include breakpoint($screen-small) {
-    @include span(6 last);
-  }
-  h1 {
-    @extend %h1;
   }
 }

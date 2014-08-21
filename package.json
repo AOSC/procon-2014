@@ -1,0 +1,7 @@
+{
+  "name": "procon-2014",
+  "private": true,
+  "dependencies": {
+    "jade": "^1.5.0"
+  }
+}

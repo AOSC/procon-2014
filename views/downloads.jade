@@ -1,0 +1,25 @@
+extend ./layout.jade
+
+block main
+  section.simple
+    h1
+      span.icon-download
+      span ダウンロード一覧
+    p もし実行環境の構築などで、わからないことがあれば、
+      a(href="mailto:info@procon-asahikawa.org" target="_blank") こちらのメールへ
+      | ご連絡ください。いつでも質問を受け付けています。
+    ul.list-circle
+      li
+        time(datetime="2014-08-22") 8/22
+        a(target="_blank" href="/files/競技マニュアルver1.00.pdf") 競技マニュアルver1.00
+        p 競技部門のマニュアルです。
+      li
+        time(datetime="2014-08-20") 8/20
+        a(target="_blank" href="https://drive.google.com/file/d/0B-ux0O0l8SYyR0dRZFhkQjl3bGM/edit?usp=sharing") 実行環境イメージ（2.4GB)
+        p ファイルサイズが大きいので、ダウンロードに時間がかかります。
+      li
+        time(datetime="2014-08-20") 8/20
+        a(target="_blank" href="/files/プログラミングコンテスト用環境構築方法.pdf") プログラミングコンテスト用環境構築方法
+      li
+        time(datetime="2014-08-20") 8/20
+        a(target="_blank" href="/files/2014年度U-16旭川プロコン各種情報集.pdf") 2014年度U-16旭川プロコン各種情報集
