@@ -5,6 +5,7 @@
 /public/fonts/
 /public/sass/_fontcustom.scss
 /public/html/
+/public/*.html
 .sass-cache
 .fontcustom-manifest.json
 .DS_Store

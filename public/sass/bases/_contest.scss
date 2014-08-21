@@ -1,0 +1,34 @@
+.contest-details {
+  @include span(12);
+  @include container;
+  background-color: darken($background, 5%);
+  > h1 {
+    @extend %h0;
+    @extend %gothic;
+    text-align: center;
+    background-color: $gray-darkest;
+    color: $white;
+  }
+}
+
+.contest-details-kyogi {
+  @include span(12);
+  @extend %section-wide;
+  @include breakpoint($screen-small) {
+    @include span(6);
+  }
+  h1 {
+    @extend %h1;
+  }
+}
+
+.contest-details-sakuhin {
+  @include span(12);
+  @extend %section-wide;
+  @include breakpoint($screen-small) {
+    @include span(6 last);
+  }
+  h1 {
+    @extend %h1;
+  }
+}
