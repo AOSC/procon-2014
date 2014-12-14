@@ -1,7 +1,8 @@
 JADE=./node_modules/.bin/jade
 PAGE_SRC = views/index.jade \
            views/downloads.jade \
-           views/contest.jade
+           views/contest.jade \
+           views/result-2014.jade
 
 PAGE = $(patsubst views/%.jade, public/%.html, $(PAGE_SRC))
 JADE_OPTS = --path views/ --out public/
